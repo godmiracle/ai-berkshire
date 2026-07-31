@@ -1,5 +1,8 @@
 # ===== 系统与工具产物 =====
 .DS_Store
+.idea/
+.vscode/
+*.iml
 __pycache__/
 *.pyc
 .codex/
