@@ -1062,7 +1062,7 @@ Top 3 核心风险及应对策略
 
 ### 第八步：保存报告
 
-将完整最终报告写入 `reports/{公司名}/{公司名}-private-{YYYYMMDD}.md`。
+将完整个人研究报告写入 `localReports/{公司名}/{公司名}-private-{YYYYMMDD}.md`。用户明确要求公开发布后，再复制到对应的 `reports/{公司名}/` 路径。
 
 ### 第九步：清理团队
 

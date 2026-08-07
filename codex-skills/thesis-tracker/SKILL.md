@@ -39,7 +39,7 @@ This skill is generated from `skills/thesis-tracker.md` so Claude Code and Codex
 
 ### 第一步：判断操作模式
 
-检查是否已存在该公司的投资论文文件（`reports/{公司名}-thesis.md`）：
+优先检查是否已存在该公司的个人投资论文文件（`localReports/{公司名}-thesis.md`）；若不存在，再检查公开基线 `reports/{公司名}-thesis.md`：
 - 如果不存在 → 进入**建立论文**模式
 - 如果存在 → 进入**追踪检查**模式
 - 如果找不到但用户表示已有 → 询问文件路径
@@ -107,7 +107,7 @@ This skill is generated from `skills/thesis-tracker.md` so Claude Code and Codex
 
 ### A5：保存论文
 
-将投资论文写入 `reports/{公司名}-thesis.md`，包含：
+将投资论文写入 `localReports/{公司名}-thesis.md`，包含：
 - 建立日期
 - 买入价格和仓位
 - 核心论文（5句话）
@@ -122,7 +122,7 @@ This skill is generated from `skills/thesis-tracker.md` so Claude Code and Codex
 
 ### B1：读取现有论文
 
-读取 `reports/{公司名}-thesis.md`，加载：
+优先读取 `localReports/{公司名}-thesis.md`，若不存在则读取 `reports/{公司名}-thesis.md`，加载：
 - 核心论文
 - 核心假设清单
 - 红线清单
@@ -208,7 +208,7 @@ This skill is generated from `skills/thesis-tracker.md` so Claude Code and Codex
 
 ### B7：更新论文文件
 
-将本次检查记录追加到 `reports/{公司名}-thesis.md` 的追踪记录表中：
+将本次检查记录追加到实际使用的论文文件中；新建论文默认写入 `localReports/{公司名}-thesis.md`，明确公开发布后才复制到 `reports/`：
 
 | 检查日期 | 健康度 | 核心变化 | 动作建议 |
 |---------|:------:|---------|---------|

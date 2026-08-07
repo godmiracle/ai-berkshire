@@ -149,6 +149,8 @@ This skill is generated from `skills/wechat-article.md` so Claude Code and Codex
 {完整初稿}
 
 ## 输出格式
+
+公众号文章属于公开发布内容，因此最终成稿写入 `reports/`；未公开的个人草稿先保存到 `localReports/`。
 1. 总体评价（3-5句话）
 2. 标题修改建议（给2-3个备选）
 3. 逐节修改建议（给出"原文→建议修改为"的具体对照）

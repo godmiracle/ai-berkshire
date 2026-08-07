@@ -213,6 +213,10 @@ Ask AI directly, and you have one context window. Four parallel Agents means 4×
 
 ## Quick Start
 
+### Report directories
+
+Personal research, drafts, and reports not explicitly requested for public release default to `localReports/` and sync to the user's fork. Only publish a final version to `reports/` when the user explicitly requests public release; report links in this README refer to published reports.
+
 ### Cost & Model Selection
 
 Deep-research skills run multiple research passes, cross-source checks, and multi-agent synthesis by design, so they can consume a large number of tokens. That cost is part of getting fuller coverage across business quality, financials, industry structure, and risk.
@@ -339,7 +343,7 @@ Invoke directly in Claude Code:
 /income-investment Verizon mode=existing role=core-income quantity=100 cost_basis=39.50 tax_residence=France horizon=5y
 /portfolio-review Tencent 30%, Meituan 20%, Moutai 20%, Cash 30%
 /thesis-tracker Pinduoduo
-/thesis-drift Pinduoduo reports/PDD-thesis-2025Q4.md reports/PDD-thesis-2026Q1.md
+/thesis-drift Pinduoduo localReports/PDD-thesis-2025Q4.md localReports/PDD-thesis-2026Q1.md
 /news-pulse Tencent
 
 # Thinking Tools

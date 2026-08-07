@@ -220,7 +220,7 @@ python3 tools/financial_rigor.py three-scenario \
 - ❓ **灰色地带** — 说明关键争议点是什么，投资者需要自行判断什么
 - N/A — 未上市/无法买入
 
-将完整报告写入 `~/巴菲特Checklist-[公司名或"多公司对比"].md`
+将个人研究报告写入 `localReports/巴菲特Checklist-[公司名或"多公司对比"].md`；用户明确要求公开发布后，再复制到 `reports/`。
 
 ## 输出格式要求
 

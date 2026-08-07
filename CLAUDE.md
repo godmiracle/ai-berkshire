@@ -10,13 +10,21 @@ GitHub: xbtlin/ai-berkshire
 ```
 skills/          — 投研 Skill 定义（.md），复制到 ~/.claude/commands/ 使用
 tools/           — 辅助工具（financial_rigor.py 精确计算、twstock_data.py 台股FinMind取数）
-reports/         — 投资研究报告输出
+localReports/    — 个人研究报告默认输出（同步到自己的 fork）
+reports/         — 已审阅、准备公开发布的投资研究报告
 assets/          — 图片等静态资源
 ```
 
+## 报告输出目录约定
+
+个人研究、草稿、底稿和未明确要求公开的报告统一写入 `localReports/`。
+用户明确要求公开发布后，再将对应的最终版本写入 `reports/`。读取既有基线时，
+优先检查 `localReports/`，公开报告才从 `reports/` 读取。
+
 ## 报告目录结构
 
-所有报告按**公司名**建文件夹，公司相关的所有报告放在对应文件夹内：
+个人研究和公开报告使用相同的目录结构；下方示例展示已公开的 `reports/`，
+个人版本将同样放在 `localReports/` 对应位置：
 
 ```
 reports/
@@ -41,22 +49,22 @@ reports/
 
 | Skill | 文件命名格式 | 示例 |
 |------|---------|------|
-| /investment-team | `{公司名}/` 目录内含4个视角+最终报告 | `reports/拼多多/最终报告.md` |
-| /investment-research | `{公司名}-research-{YYYYMMDD}.md` | `reports/腾讯/腾讯-research-20260408.md` |
-| /investment-checklist | `{公司名}-checklist-{YYYYMMDD}.md` | `reports/腾讯/腾讯-checklist-20260408.md` |
-| /industry-research | `{行业名}-industry-{YYYYMMDD}.md`（根目录） | `reports/核电-industry-20260409.md` |
-| /industry-funnel | `{行业名}-funnel-{YYYYMMDD}.md`（根目录） | `reports/AI算力-funnel-20260509.md` |
-| /private-company-research | `{公司名}-private-{YYYYMMDD}.md` | `reports/字节跳动/字节跳动-private-20260408.md` |
-| /earnings-review | `{公司名}-earnings-{期间}.md` | `reports/腾讯/腾讯-earnings-2025Q4.md` |
-| /earnings-team | `{公司名}/` 目录内含4个大师视角+研究底稿+公众号文章+读者评审 | `reports/腾讯/腾讯-earnings-2025Q4.md`（公众号定稿） |
-| /thesis-tracker | `{公司名}-thesis.md`（长期维护） | `reports/腾讯/腾讯-thesis.md` |
-| /portfolio-review | `portfolio-latest.md`（根目录，持续更新） | `reports/portfolio-latest.md` |
-| /management-deep-dive | `{公司名}-management-{YYYYMMDD}.md` | `reports/腾讯/腾讯-management-20260409.md` |
+| /investment-team | `{公司名}/` 目录内含4个视角+最终报告 | `localReports/拼多多/最终报告.md` |
+| /investment-research | `{公司名}-research-{YYYYMMDD}.md` | `localReports/腾讯/腾讯-research-20260408.md` |
+| /investment-checklist | `{公司名}-checklist-{YYYYMMDD}.md` | `localReports/腾讯/腾讯-checklist-20260408.md` |
+| /industry-research | `{行业名}-industry-{YYYYMMDD}.md`（根目录） | `localReports/核电-industry-20260409.md` |
+| /industry-funnel | `{行业名}-funnel-{YYYYMMDD}.md`（根目录） | `localReports/AI算力-funnel-20260509.md` |
+| /private-company-research | `{公司名}-private-{YYYYMMDD}.md` | `localReports/字节跳动/字节跳动-private-20260408.md` |
+| /earnings-review | `{公司名}-earnings-{期间}.md` | `localReports/腾讯-earnings-2025Q4.md` |
+| /earnings-team | `{公司名}/` 目录内含4个大师视角+研究底稿+公众号文章+读者评审 | `localReports/腾讯/腾讯-earnings-2025Q4-研究底稿.md`（个人研究） |
+| /thesis-tracker | `{公司名}-thesis.md`（长期维护） | `localReports/腾讯/腾讯-thesis.md` |
+| /portfolio-review | `portfolio-latest.md`（根目录，持续更新） | `localReports/portfolio-latest.md` |
+| /management-deep-dive | `{公司名}-management-{YYYYMMDD}.md` | `localReports/腾讯/腾讯-management-20260409.md` |
 
 ## /investment-team 文件结构
 
 ```
-reports/{公司名}/
+localReports/{公司名}/
 ├── README.md                         — 研究框架概览+核心结论
 ├── 01-商业模式分析-段永平视角.md
 ├── 02-财务估值分析-巴菲特视角.md
@@ -95,12 +103,14 @@ reports/{公司名}/
 ## 常用命令
 
 ```bash
-# 推送报告到GitHub
+# 同步个人研究报告到自己的 fork
 cd ~/ai-berkshire
-git add reports/xxx.md
+git add localReports/xxx.md
 git commit -m "添加xxx报告"
 git pull --rebase origin main
 git push origin main
+
+# 用户明确要求公开发布时，才使用 reports/xxx.md
 ```
 
 ## 注意事项

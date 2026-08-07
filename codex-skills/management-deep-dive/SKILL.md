@@ -284,7 +284,7 @@ AI无法和管理层面对面交流，但可以通过公开渠道的侧面信息
 
 ### 第九步：保存报告
 
-将报告写入 `reports/{公司名}-management-{YYYYMMDD}.md`，例如 `reports/美团-management-20260409.md`
+将个人研究报告写入 `localReports/{公司名}/{公司名}-management-{YYYYMMDD}.md`，例如 `localReports/美团/美团-management-20260409.md`。用户明确要求公开发布后，再复制到对应的 `reports/` 路径。
 
 ---
 

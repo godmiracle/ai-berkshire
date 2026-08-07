@@ -12,8 +12,9 @@ validation tools. Keep compatibility with both Claude Code and Codex users.
 - `codex-prompts/*.md`: generated Codex custom prompts for slash-command
   style entry points. These are a compatibility layer; skills remain preferred.
 - `tools/*.py`: shared financial validation and data tools used by both systems.
-- `reports/`: research outputs. Do not rewrite unrelated reports while changing
-  tooling or skills.
+- `localReports/`: personal research outputs that are kept in the user's fork.
+- `reports/`: public research outputs that are ready to publish. Do not rewrite
+  unrelated reports while changing tooling or skills.
 - `scripts/sync-codex-skills.py`: regenerates Codex skills from `skills/*.md`.
 - `scripts/install-codex-skills.sh` / `scripts/install-codex-skills.bat`:
   installs Codex skills locally.
@@ -40,6 +41,12 @@ validation tools. Keep compatibility with both Claude Code and Codex users.
   behavior.
 
 ## Research Quality Rules
+
+- Default report destination is `localReports/`. Only copy or publish a report
+  to `reports/` when the user explicitly requests public release.
+- When reading an existing baseline, check `localReports/` first and use
+  `reports/` for already-published public reports or an explicitly supplied
+  public path.
 
 - Before starting any research, run the `date` command to confirm today's
   date. Treat that date as the baseline for "latest" data (prices, market cap,

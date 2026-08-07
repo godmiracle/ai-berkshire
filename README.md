@@ -223,6 +223,11 @@ AI Berkshire 确保：**同样的输入 → 结构一致、深度一致的输出
 
 ## 快速开始
 
+### 报告输出目录
+
+个人研究、草稿和未明确要求公开的报告默认写入 `localReports/`，该目录用于同步到自己的 fork。
+只有用户明确要求公开发布时，才将最终版本写入 `reports/`；仓库中的 `reports/` 链接主要指已公开报告。
+
 ### 成本与模型选择
 
 深度投研类 Skill 默认会进行多轮研究、交叉验证和多 Agent 综合判断，因此 token 消耗较高，这是为了换取更完整的商业、财务、行业和风险分析。
@@ -349,7 +354,7 @@ REM 可选：安装 Codex slash prompts
 /income-investment Verizon mode=existing role=core-income quantity=100 cost_basis=39.50 tax_residence=France horizon=5y
 /portfolio-review 腾讯30%, 美团20%, 茅台20%, 现金30%
 /thesis-tracker 拼多多
-/thesis-drift 拼多多 reports/拼多多-thesis-2025Q4.md reports/拼多多-thesis-2026Q1.md
+/thesis-drift 拼多多 localReports/拼多多-thesis-2025Q4.md localReports/拼多多-thesis-2026Q1.md
 /news-pulse 腾讯
 
 # 思维工具

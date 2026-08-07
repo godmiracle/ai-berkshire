@@ -209,7 +209,7 @@ This skill is generated from `skills/investment-team.md` so Claude Code and Code
 
 ### 第八步：保存报告
 
-将完整最终报告写入 `~/{公司名}投资研究报告_{日期}.md`（日期格式 YYYYMMDD）。
+将完整个人研究报告写入 `localReports/{公司名}/{公司名}-team-{日期}.md`（日期格式 YYYYMMDD）。用户明确要求公开发布后，再复制到对应的 `reports/{公司名}/` 路径。
 
 ### 第九步：数据抽检（准出流程）
 
